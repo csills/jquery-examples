@@ -5,15 +5,19 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-    /*
-    When the section header is clicked, hide the section.
-    When it's clicked again, make the section show.
-    (Make it toggle back and forth between hidden and show)
-    */
-    $(function() {
-      // Write code here
-    });
+      /*
+      When the section header is clicked, hide the section.
+      When it's clicked again, make the section show.
+      (Make it toggle back and forth between hidden and show)
+      */
+      $(function() {
+        // Write code here
+        $("#section-header").click(function() {
+          $("#section").toggle();
+        });
+      });
     </script>
+
 
     <style>
     #section-header {

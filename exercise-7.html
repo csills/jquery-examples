@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
     /*
-    Make a Todo List
+    Make a Todo List (HINT: http://api.jquery.com/on/)
 
     0. Make it so that after entering the task description, in the text field and clicking the "Add Task" button, a new task appears inside the element with the id todo-list.
     1. the ability to remove tasks (add an x button)
@@ -15,6 +15,16 @@
     4. the ability to edit an existing task
 
     */
+    $(function(){
+
+      $("#add-button").click(function () {
+        var toDo = $("#description").val();
+          $("#todo-list").append("<li>" + toDo + "</li>");
+      });
+
+
+      
+    });
     </script>
     <style>
     #wrapper {
@@ -31,7 +41,7 @@
     <div id="wrapper">
       <input id="description" type="text" name="description">
       <button id="add-button">Add Task</button>
-      <ul id="todo-list">
+      <ul id="todo-list", contenteditable="true">
         <li>Feed the cat</li>
       </ul>
     </div>
