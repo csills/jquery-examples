@@ -16,15 +16,23 @@
 
     */
     $(function(){
-
-      $("#add-button").click(function () {
-        var toDo = $("#description").val();
-          $("#todo-list").append("<li>" + toDo + "</li>");
+      $('ul').on('click', '.delete', function(){
+        $(this).parent().remove();
       });
-
-
+      $('ul').on('click', '.complete', function(){
+        $(this).parent().css("text-decoration", "line-through");
+      });
+      $('ul').on('click', 'span', function(){
+        $(this).attr('contenteditable', 'true');
+      });
+      $('#add-button').click(function(){
+        var text = $('#description').val();
+        $('ul').append('<li><span>'+text+'</span><button class="delete">X</button><button class="complete">done</button></li>');             
+      })
       
     });
+
+
     </script>
     <style>
     #wrapper {
@@ -41,8 +49,8 @@
     <div id="wrapper">
       <input id="description" type="text" name="description">
       <button id="add-button">Add Task</button>
-      <ul id="todo-list", contenteditable="true">
-        <li>Feed the cat</li>
+      <ul id="todo-list">
+          <li><span>Feed the cat</span> <button class="delete">X</button><button class="complete">done</button></li>
       </ul>
     </div>
   </body>
